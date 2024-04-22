@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 
 public class Reduction {
 
@@ -7,13 +8,15 @@ public class Reduction {
             "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
             "u", "v", "w", "x", "y", "z"};
 
-    public static String reduction(int h, int level){
-        int hash = h + level;
+    public static String reduction(BigInteger h, BigInteger level){
+        BigInteger hash = h.add(level);
         String s = "";
 
         for(int i = 0; i < 7; i++){
-            s = z[hash % z.length] + s;
-            hash = hash / z.length;
+            BigInteger len = BigInteger.valueOf(z.length);
+            BigInteger index = hash.mod(len);
+            s = z[index.intValue()] + s;
+            hash = hash.divide(len);
         }
 
         return s;
