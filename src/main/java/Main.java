@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         List<String> passwds = Passwords.getFirst2000Passwd();
 
         for (String s : passwds){
@@ -11,6 +11,8 @@ public class Main {
 
         String password = "HelloWorld";
         System.out.println("68e109f0f40ca72a15e05cc22786f8e6".equals(MD5Util.hashFunc(password)));
+
+        RainbowTable table = new RainbowTable(passwds);
 
     }
 }
