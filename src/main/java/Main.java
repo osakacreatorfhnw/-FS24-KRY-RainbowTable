@@ -13,6 +13,5 @@ public class Main {
         System.out.println("68e109f0f40ca72a15e05cc22786f8e6".equals(MD5Util.hashFunc(password)));
 
         RainbowTable table = new RainbowTable(passwds);
-
     }
 }
