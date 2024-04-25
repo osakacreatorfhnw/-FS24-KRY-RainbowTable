@@ -10,6 +10,11 @@ public class Passwords {
             "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
             "u", "v", "w", "x", "y", "z"};
 
+    /*
+    * Generiert eine Liste von 2000 Passwörtern,
+    * die aus einer begrenzten Zeichenmenge bestehen (0-9, a-z).
+    * Jedes Passwort hat eine Länge von 7 Zeichen.
+    * */
     public static List<String> getFirst2000Passwd() {
         List<String> list = new ArrayList<>();
 

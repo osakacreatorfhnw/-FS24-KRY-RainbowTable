@@ -8,6 +8,11 @@ public class Reduction {
             "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
             "u", "v", "w", "x", "y", "z"};
 
+    /*
+    * Index durch den hash mod 33.
+    * Dieser Index wird pro Runde verwendet um
+    * Ziffer in den resultierenden String zu plazieren.
+    * */
     public static String reduction(BigInteger h, BigInteger level){
         BigInteger hash = h.add(level);
         String s = "";

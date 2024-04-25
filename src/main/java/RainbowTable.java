@@ -6,6 +6,10 @@ import java.util.Map;
 public class RainbowTable {
     private Map<String,String> rainbowTable = new HashMap<>();
 
+    /*
+    * Aus den 2000 Passwörtern werden 2000 Ketten berechnet mit h(x) = y Ri(y) = z
+    * Startwert und Endwert werden in einer Liste gespeichert.
+    * */
     public RainbowTable(List<String> passwords) {
         for (String password : passwords) {
             String hash = password;
@@ -17,9 +21,13 @@ public class RainbowTable {
         }
     }
 
-    public String getEndValue(String startValue){
-        return rainbowTable.getOrDefault(startValue, "");
+    public String getStartValue(String endValue) {
+        for (Map.Entry<String, String> entry : rainbowTable.entrySet()) {
+            if (entry.getValue().equals(endValue)) {
+                return entry.getKey();
+            }
+        }
+        return "";
     }
-
 
 }
